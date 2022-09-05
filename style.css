@@ -71,6 +71,164 @@ body {
   transform: scale(1.5);
 }
 
+.section-1__cube-container {
+  perspective: 100rem;
+}
+
+.cube {
+  width: 30rem;
+  height: 55rem;
+  transform-style: preserve-3d;
+  transform: rotateX(0) rotateY(20deg) rotateZ(0);
+  position: relative;
+  top: -2rem;
+  transition: transform 0.5s;
+}
+
+.cube__front-side,
+.cube__back-side {
+  width: 100%;
+  height: 100%;
+  background-color: #fee;
+  position: absolute;
+  transform-style: preserve-3d;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.cube__front-side {
+  padding: 2.5rem;
+  transform: translateZ(5rem);
+}
+
+.cube__front-side::before,
+.cube__front-side::after {
+  content: '';
+  width: 100%;
+  height: 10rem;
+  background-color: #fee;
+  position: absolute;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.cube__front-side::before {
+  top: 0;
+  left: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+
+.cube__front-side::after {
+  bottom: 0;
+  left: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+}
+
+.cube__front-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cube__back-side {
+  transform: translateZ(-5rem);
+}
+
+.cube__back-side::before,
+.cube__back-side::after {
+  content: 'iPhone';
+  width: 10rem;
+  height: 100%;
+  background-color: #fee;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #ec1919;
+  box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.cube__back-side::before {
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+
+.cube__back-side::after {
+  top: 0;
+  right: 0;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+
+.cube__back-side i {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: 0.1rem 0.1rem 0.2rem #aaa, -0.1rem -0.1rem 0.2rem #aaa;
+  transform: rotateY(180deg);
+}
+
+.section-1__cube-controllers {
+  position: absolute;
+  bottom: -15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 10rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+  border: 1rem solid rgba(0, 0, 0, 0.8);
+}
+
+.section-1__cube-controllers a {
+  position: absolute;
+}
+
+.section-1__cube-controllers i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+.section-1__cube-controllers a:hover i {
+  opacity: 1;
+}
+
+.section-1__cube-controllers a:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-1__cube-controllers a:nth-child(2) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-1__cube-controllers a:nth-child(3) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.section-1__cube-controllers a:nth-child(4) {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.section-1__cube-controllers a:nth-child(5) {
+  top: 10%;
+  right: 10%;
+  transform: rotate(45deg);
+}
+.section-1__cube-controllers a:nth-child(6) {
+  bottom: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
 .section-1__banner {
   flex-direction: column;
 }

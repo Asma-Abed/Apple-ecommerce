@@ -28,3 +28,73 @@ const slideshow = () => {
 };
 
 slideshow();
+
+const controllers = document.querySelector('.section-1__cube-controllers');
+const cube = document.querySelector('.cube');
+
+let x = 0;
+let y = 20;
+let z = 0;
+let rotate = true;
+let interval;
+
+controllers.addEventListener('click', (e) => {
+  console.log(e.target);
+  if (
+    e.target.classList.contains('controller-top-x') ||
+    e.target.classList.contains('fa-arrow-up-x')
+  ) {
+    cube.style.transform = `rotateX(${(x += 20)}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
+  }
+  if (
+    e.target.classList.contains('controller-bottom-x') ||
+    e.target.classList.contains('fa-arrow-down-x')
+  ) {
+    cube.style.transform = `rotateX(${(x -= 20)}deg) rotateY(${y}deg) rotateZ(${z}deg)`;
+  }
+  if (
+    e.target.classList.contains('controller-left-y') ||
+    e.target.classList.contains('fa-arrow-left')
+  ) {
+    cube.style.transform = `rotateX(${x}deg) rotateY(${(y -= 20)}deg) rotateZ(${z}deg)`;
+  }
+  if (
+    e.target.classList.contains('controller-right-y') ||
+    e.target.classList.contains('fa-arrow-right')
+  ) {
+    cube.style.transform = `rotateX(${x}deg) rotateY(${(y += 20)}deg) rotateZ(${z}deg)`;
+  }
+  if (
+    e.target.classList.contains('controller-top-z') ||
+    e.target.classList.contains('fa-arrow-down-z')
+  ) {
+    cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z -= 20)}deg)`;
+  }
+  if (
+    e.target.classList.contains('controller-bottom-z') ||
+    e.target.classList.contains('fa-arrow-up-z')
+  ) {
+    cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${(z += 20)}deg)`;
+  }
+});
+
+const playPause = () => {
+  if (rotate) {
+    interval = setInterval(() => {
+      cube.style.transform = `rotateX(${x}deg) rotateY(${y++}deg) rotateZ(${z}deg)`;
+    }, 100);
+  } else {
+    clearInterval(interval);
+  }
+};
+
+playPause();
+
+controllers.addEventListener('mouseover', () => {
+  rotate = false;
+  playPause();
+});
+controllers.addEventListener('mouseout', () => {
+  rotate = true;
+  playPause();
+});
