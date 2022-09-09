@@ -418,3 +418,141 @@ body {
 .section-2__btn:hover span {
   transform: scale(1);
 }
+
+.section-3 {
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-color);
+  flex-direction: column;
+  padding: 15rem 0;
+  clip-path: polygon(68% 0, 100% 0, 100% 97%, 38% 100%, 0 100%, 0 3%);
+}
+
+.section-3__heading {
+  font-size: 10rem;
+  font-weight: 200;
+  color: var(--primary-color);
+  margin-bottom: 15rem;
+}
+
+.section-3__content {
+  width: 80%;
+  flex-direction: column;
+  perspective: 1000rem;
+  position: relative;
+}
+
+.section-3__content img {
+  width: inherit;
+}
+
+.section-1__img-1 {
+  transform: rotateX(-80deg);
+  transform-origin: bottom;
+  transition: all 3s;
+}
+
+.change .section-1__img-1 {
+  transform: rotateX(0);
+}
+
+.section-3__loading-container {
+  position: absolute;
+  top: 6%;
+  width: 60%;
+  height: 85%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(images/MacBook/macbook-1-desktop.png) center no-repeat;
+  z-index: -1;
+  opacity: 0;
+}
+
+.change .section-3__loading-container {
+  opacity: 1;
+  transition: opacity 1s 2s;
+}
+
+.section-3__loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--black-color);
+  flex-direction: column;
+}
+
+.change .section-3__loading {
+  opacity: 0;
+  transition: opacity 1s 5s;
+}
+
+.section-3__loading i {
+  font-size: 10rem;
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+
+.section-3__progress {
+  width: 22rem;
+  height: 0.3rem;
+  background-color: #888;
+  border-radius: 5rem;
+  position: relative;
+}
+
+.section-3__progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--white-color);
+}
+
+.change .section-3__progress::after {
+  width: 100%;
+  transition: width 1s 3s;
+}
+
+.section-3__info {
+  position: absolute;
+  width: 70rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.change .section-3__info {
+  opacity: 1;
+  transition: opacity 1s 6s;
+}
+
+.section-3__info-heading {
+  font-size: 6rem;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.section-3__price {
+  font-size: 2.5rem;
+  font-weight: 200;
+  margin: 3rem 0;
+}
+
+.section-3__btn {
+  width: 25rem;
+  height: 5rem;
+  background-image: linear-gradient(#ddd, #fff);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem #fff, -0.1rem -0.1rem 0.1rem #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}

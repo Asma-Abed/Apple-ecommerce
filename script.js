@@ -98,3 +98,14 @@ controllers.addEventListener('mouseout', () => {
   rotate = true;
   playPause();
 });
+
+// Section 3
+const section3Content = document.querySelector('.section-3__content');
+window.addEventListener('scroll', () => {
+  if (
+    window.scrollY + window.innerHeight >=
+    section3Content.offsetTop + section3Content.offsetHeight / 2
+  ) {
+    section3Content.classList.add('change');
+  }
+});
