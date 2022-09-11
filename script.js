@@ -1,3 +1,13 @@
+const linkControll = document.querySelectorAll(
+  '.section-4__controller, .section-1__cube-controllers a, .section-2__btn'
+);
+linkControll.forEach((controller) => {
+  controller.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+});
+
+// Section 1
 const slideShowDivs = () => {
   for (let i = 1; i <= 5; i++) {
     const div = document.createElement('div');
@@ -39,7 +49,6 @@ let rotate = true;
 let interval;
 
 controllers.addEventListener('click', (e) => {
-  console.log(e.target);
   if (
     e.target.classList.contains('controller-top-x') ||
     e.target.classList.contains('fa-arrow-up-x')
@@ -108,4 +117,58 @@ window.addEventListener('scroll', () => {
   ) {
     section3Content.classList.add('change');
   }
+});
+
+// Section 4
+const watchBands = document.querySelector('.section-4__bands');
+const watchCases = document.querySelector('.section-4__cases');
+const topController = document.querySelector('.section-4__up-cont');
+const rightController = document.querySelector('.section-4__right-cont');
+const bottomController = document.querySelector('.section-4__bottom-cont');
+const leftController = document.querySelector('.section-4__left-cont');
+
+const hideControllers = () => {
+  if (axisY === -280) {
+    topController.classList.add('hide-controller');
+  } else {
+    topController.classList.remove('hide-controller');
+  }
+  if (axisY === 280) {
+    bottomController.classList.add('hide-controller');
+  } else {
+    bottomController.classList.remove('hide-controller');
+  }
+  if (axisX === -280) {
+    rightController.classList.add('hide-controller');
+  } else {
+    rightController.classList.remove('hide-controller');
+  }
+  if (axisX === 280) {
+    leftController.classList.add('hide-controller');
+  } else {
+    leftController.classList.remove('hide-controller');
+  }
+};
+
+let axisX = 0;
+let axisY = 0;
+
+topController.addEventListener('click', () => {
+  watchCases.style.marginTop = `${(axisY -= 70)}rem`;
+  hideControllers();
+});
+
+bottomController.addEventListener('click', () => {
+  watchCases.style.marginTop = `${(axisY += 70)}rem`;
+  hideControllers();
+});
+
+rightController.addEventListener('click', () => {
+  watchBands.style.marginRight = `${(axisX -= 70)}rem`;
+  hideControllers();
+});
+
+leftController.addEventListener('click', () => {
+  watchBands.style.marginRight = `${(axisX += 70)}rem`;
+  hideControllers();
 });

@@ -13,6 +13,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -256,6 +257,7 @@ body {
   padding: 2rem 4rem;
   font-size: 2rem;
   font-weight: 400;
+  font-family: inherit;
   background-color: var(--black-color);
   color: var(--primary-color);
   letter-spacing: 0.1rem;
@@ -552,7 +554,380 @@ body {
   box-shadow: 0.1rem 0.1rem 0.1rem #fff, -0.1rem -0.1rem 0.1rem #fff;
   font-size: 1.5rem;
   font-weight: 500;
+  font-family: inherit;
   letter-spacing: 0.2rem;
   color: var(--primary-color);
   cursor: pointer;
+}
+
+.section-4 {
+  height: 140vh;
+  padding: 20vh 0;
+  flex-direction: column;
+  position: relative;
+}
+
+.section-4__watches {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section-4__watches > div {
+  position: absolute;
+}
+
+.section-4__cases {
+  flex-direction: column;
+  transition: margin-Top 1s;
+}
+
+.section-4__bands {
+  transition: margin-right 1s;
+}
+
+.section-4__band-img,
+.section-4__case-img {
+  width: 35rem;
+  height: 35rem;
+  object-fit: contain;
+}
+
+.section-4__controller {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(221, 221, 221, 0.4);
+  border-radius: 5rem;
+}
+
+.section-4__controller i {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.section-4__up-cont {
+  top: 22vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-4__right-cont {
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.section-4__bottom-cont {
+  left: 50%;
+  bottom: 20vh;
+  transform: translateX(-50%);
+}
+
+.section-4__left-cont {
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.section-4__btn {
+  position: absolute;
+  bottom: 30vh;
+  right: 35%;
+  width: 13rem;
+  height: 5rem;
+  background-color: var(--black-color);
+  color: var(--primary-color);
+  border: 0.1rem dashed var(--white-color);
+  border-radius: 4rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.hide-controller {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.section-5 {
+  width: 100%;
+  height: 100vh;
+}
+
+.section-5__airpods {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  position: relative;
+}
+
+.section-5__heading {
+  font-size: 15rem;
+  font-weight: 300;
+  color: var(--white-color);
+  text-shadow: 0.1rem 0.1rem 0.1rem #999;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-5__airpods img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.section-5__img-2 {
+  background-color: var(--primary-color);
+}
+
+.section-5__btns {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 5rem;
+}
+
+.section-5__btn {
+  width: 15rem;
+  height: 4rem;
+  background-color: var(--primary-color);
+  margin: 0 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.section-5__btn:last-child {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.footer {
+  width: 100%;
+  height: 40vh;
+  flex-direction: column;
+}
+
+.footer__icon {
+  margin: 0 5rem;
+}
+
+.footer__icon img {
+  width: 10rem;
+}
+
+.copyright {
+  margin-top: 8rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+/* Media queries */
+@media (max-width: 1500px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 1100px) {
+  html {
+    font-size: 40%;
+  }
+  .nav-bar__link {
+    font-weight: 700;
+  }
+  .section-1__banner h1 {
+    font-size: 8rem;
+  }
+  .section-1__banner p {
+    font-size: 3rem;
+  }
+  .section-4__btn {
+    right: 25%;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-3__content {
+    width: 90%;
+  }
+  .section-3__loading-container {
+    width: 70%;
+  }
+  .section-3__loading i {
+    font-size: 6rem;
+  }
+  .section-5__heading {
+    font-size: 12rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .logo {
+    top: 0;
+    left: 2rem;
+  }
+
+  .logo i {
+    font-size: 8rem;
+  }
+
+  .section-1__cube-controllers {
+    display: none;
+  }
+  .cube {
+    top: 3rem;
+  }
+
+  .section-1__banner {
+    position: absolute;
+  }
+
+  .section-1__cube-container {
+    opacity: 0.7;
+  }
+
+  .section-1__banner h1 {
+    position: relative;
+    left: -5rem;
+  }
+
+  .section-1__banner h1::first-letter {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .section-1__banner button:hover {
+    clip-path: polygon(
+      50% 0,
+      81% 5%,
+      100% 0,
+      100% 100%,
+      80% 95%,
+      50% 100%,
+      20% 95%,
+      0 100%,
+      0 0,
+      23% 5%
+    );
+  }
+
+  .section-2__iphones {
+    height: 70vh;
+    width: 70vw;
+  }
+
+  .section-4__btn {
+    right: 15%;
+  }
+
+  .section-5__img-1 {
+    display: none;
+  }
+
+  .section-5__airpods .section-5__img-2 {
+    width: 100%;
+  }
+
+  .section-5__btn {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    box-shadow: 0.1rem 0.1rem 0.1rem #ddd;
+  }
+
+  .footer__icon {
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-bar__link {
+    margin: 0 1.5rem;
+  }
+
+  .section-2__heading,
+  .section-3__heading {
+    font-size: 8rem;
+  }
+
+  .section-3__info-heading {
+    font-size: 5rem;
+  }
+
+  .section-3__btn {
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+
+  .section-5__btns {
+    width: 50rem;
+    text-align: center;
+  }
+
+  .footer__icon img {
+    width: 8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 35%;
+  }
+
+  .logo {
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-bar {
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+  }
+
+  .section-3__info {
+    width: 40rem;
+  }
+
+  .section-1__banner p {
+    text-align: center;
+  }
+
+  .section-2__iphones {
+    width: 75vw;
+  }
+
+  .section-3__heading {
+    font-size: 6rem;
+  }
+
+  .section-3__info-heading {
+    font-size: 3rem;
+  }
+
+  .section-3__price {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .section-4__btn {
+    right: 5%;
+  }
+
+  .footer__icon img {
+    width: 6rem;
+  }
+
+  .copyright {
+    text-align: center;
+  }
 }
